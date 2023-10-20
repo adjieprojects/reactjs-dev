@@ -6,7 +6,7 @@ import {
     RouterProvider
 } from 'react-router-dom';
 
-
+import { AppLayout } from "./layouts";
 import { Dashboard, Users } from './container';
 import './App.scss';
 
@@ -23,7 +23,7 @@ import 'admin-lte/dist/js/adminlte.min.js';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<Dashboard />}>
+        <Route path="/" element={<AppLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="users" element={<Users />} />
         </Route>

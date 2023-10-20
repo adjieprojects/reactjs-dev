@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppWrap } from '../../wrapper'
+import { ContainerWrap } from "../../wrapper";
 
 import './Users.scss';
 
@@ -10,4 +10,4 @@ const Users = () => {
     )
 }
 
-export default AppWrap(Users, 'Users')
+export default ContainerWrap(Users, 'Users')

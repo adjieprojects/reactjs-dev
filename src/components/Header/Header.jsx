@@ -13,10 +13,10 @@ const Header = ({ ContainerTitle }) => {
                             <h1 className="m-0">{ContainerTitle}</h1>
                         </div>{/* /.col */}
                         <div className="col-sm-6">
-                            <ol className="breadcrumb float-sm-right">
+                            {/* <ol className="breadcrumb float-sm-right">
                                 <li className="breadcrumb-item"><a href="!#">Home</a></li>
                                 <li className="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
+                            </ol> */}
                         </div>{/* /.col */}
                     </div>{/* /.row */}
                 </div>{/* /.container-fluid */}

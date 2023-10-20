@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppWrap } from '../../wrapper'
+import { ContainerWrap } from "../../wrapper";
 
 import './Dashboard.scss';
 
@@ -10,4 +10,4 @@ const Dashboard = () => {
     )
 }
 
-export default AppWrap(Dashboard, 'Dashboard')
+export default ContainerWrap(Dashboard, 'Dashboard')

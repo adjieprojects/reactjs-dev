@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 
 import { images } from '../../constants';
@@ -6,6 +6,20 @@ import { images } from '../../constants';
 import './Sidebar.scss';
 
 const Sidebar = () => {
+    // eslint-disable-next-line
+    const [menus, setMenus] = useState([
+        {
+            name: 'Dashboard',
+            icon: 'fas fa-tachometer-alt',
+            path: '/',
+        },
+        {
+            name: 'Users',
+            icon: 'fas fa-users',
+            path: 'users',
+        },
+    ])
+
     return (
         <>
             <aside className="main-sidebar sidebar-dark-primary elevation-4">
@@ -39,21 +53,19 @@ const Sidebar = () => {
                     {/* Sidebar Menu */}
                     <nav className="mt-2">
                         <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            
-                            <li className="nav-item">
-                                <NavLink to="/" className="nav-link">
-                                    <i className="nav-icon fas fa-tachometer-alt" />
-                                    <p>
-                                        Dashboard
-                                    </p>
-                                </NavLink>
-                                <NavLink to="users" className="nav-link">
-                                    <i className="nav-icon fas fa-users" />
-                                    <p>
-                                        Users
-                                    </p>
-                                </NavLink>
-                            </li>
+
+                            {
+                                menus.map((menu,index) => (
+                                    <li className="nav-item" key={index}>
+                                        <NavLink to={menu.path} className="nav-link">
+                                            <i className={`nav-icon ${menu.icon}`} />
+                                            <p>
+                                                {menu.name}
+                                            </p>
+                                        </NavLink>
+                                    </li>
+                                ))
+                            }
 
                         </ul>
                     </nav>

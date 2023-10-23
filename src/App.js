@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     createBrowserRouter,
     createRoutesFromElements,
@@ -6,42 +6,25 @@ import {
     RouterProvider
 } from 'react-router-dom';
 
-import { AppLayout } from "./layouts";
-import { Dashboard, Users } from './container';
+import { SignIn } from "./layouts/Auth";
+import { AppLayout } from "./layouts/App";
+import { Dashboard, Users } from './pages';
 import './App.scss';
-
-import 'admin-lte/plugins/fontawesome-free/css/all.min.css';
-import 'admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css';
-
-import 'admin-lte/plugins/jquery/jquery.min.js';
-import 'admin-lte/plugins/jquery-ui/jquery-ui.min.js';
-import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js';
-import 'admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js';
-
-import 'admin-lte/dist/css/adminlte.min.css';
-import 'admin-lte/dist/js/adminlte.min.js';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<AppLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="users" element={<Users />} />
-        </Route>
+        <>
+            <Route path="sign-in" element={<SignIn />}></Route>
+            <Route path="/" element={<AppLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="users" element={<Users />} />
+            </Route>
+        </>
     )
 )
 
 const App = () => {
-    useEffect(() => {
-        document.body.classList.add(
-            'hold-transition',
-            'sidebar-mini',
-            'layout-fixed',
-        );
-    }, []);
-
-    return (
-        <RouterProvider router={router} />
-    )
+    return <RouterProvider router={router} />
 }
 
 export default App

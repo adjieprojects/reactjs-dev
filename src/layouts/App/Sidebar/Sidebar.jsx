@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 
-import { images } from '../../constants';
+import { images } from '../../../constants';
 
 import './Sidebar.scss';
 

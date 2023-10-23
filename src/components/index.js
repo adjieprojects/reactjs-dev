@@ -1,3 +1,2 @@
-export { default as Navbar } from './Navbar/Navbar'
-export { default as Sidebar } from './Sidebar/Sidebar'
-export { default as Header } from './Header/Header'
+export { default as InputText } from './InputText/InputText'
+export { default as MainButton } from './MainButton/MainButton'
